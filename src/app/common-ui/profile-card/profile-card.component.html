@@ -1,0 +1,44 @@
+<!-- @if (profile){<div class="profile-card">
+    <div class="avatar-name">
+        <img src="/assets/imges/220px-Sylvester_Stallone_Cannes_2019.jpg" alt="avatar" class="profile-card__avatar">
+
+        <div class="profile-card__name">
+            <strong>Райн Гослинг</strong>
+            <span>rayn</span>
+        </div>
+    </div>
+    <div class="profile-card__description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium
+        similique ea natus voluptatum ducimus temporibus animi, facilis maiores impedit dolorum magnam, illo, voluptas
+        dolor soluta fugit est rerum enim labore?
+    </div>
+    <div class="profile-card__tags">
+        <div class="skill-tag">Angular</div>
+    </div>
+    <button class="profile-card__btn">Subscribe</button>
+</div>}@else {
+23434353456464
+} -->
+
+<div *ngIf="profile; else noProfile">
+    <div class="profile-card">
+        <div class="avatar-name">
+            <img src="/assets/imges/220px-Sylvester_Stallone_Cannes_2019.jpg" alt="avatar" class="profile-card__avatar">
+
+            <div class="profile-card__name">
+                <strong>{{profile.firstName}}</strong>
+                <span>{{profile.username}}</span>
+            </div>
+        </div>
+        <div class="profile-card__description">
+            {{profile.description}}
+        </div>
+        <ul class="profile-card__skills">
+            <li *ngFor="let skill of profile.stack">{{ skill }}</li>
+        </ul>
+        <button class="profile-card__btn">Subscribe</button>
+    </div>
+</div>
+
+<ng-template #noProfile>
+    23434353456464
+</ng-template>
