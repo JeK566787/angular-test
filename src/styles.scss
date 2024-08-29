@@ -1,14 +1,62 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./fonts.scss";
+
 :root {
     --dark-color: black;
     --light-color: white;
+    --primary-color: #AE7AFF;
 
 }
 
+*,
+*::before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
+    font-family: "JetBrain Mono", sans-serif;
+    font-weight: 500;
     background-image: url(/assets/imges/background.jpg);
     background-color: var(--dark-color);
     color: var(--light-color);
+}
+
+.skill-tag {
+    padding: 0px 8px;
+    border-radius: 4px;
+    border: 1px solid var(--light-color);
+    display: inline;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 24px;
+    height: 24px;
+
+}
+
+.btn {
+    border: none;
+    background: var(--primary-color);
+    color: var(--dark-color);
+    padding: 10px 20px;
+    font-weight: 700;
+    font-style: 14px;
+    line-height: 24px;
+}
+
+.h6 {
+    font-style: 18px;
+    line-height: 24px;
+    font-weight: 800;
+}
+
+.subtitle {
+    font-style: 14px;
+    line-height: 20px;
+    font-weight: 400;
+
 }
 
 .h1 {
@@ -17,10 +65,7 @@ body {
     font-weight: 800;
 }
 
-.skill-tag {
-    padding: 4px 8px;
-    background-repeat: 4px;
-}
+
 
 .tt-control-label {
     font-weight: 700;
@@ -39,15 +84,4 @@ body {
     font-weight: 400;
     font-family: serif;
     color: var(--light-color);
-}
-
-.btn {
-    width: 100%;
-    border: none;
-    background: #AE7AFF;
-    color: var(--dark-color);
-    padding: 10px 20px;
-    font-weight: 700;
-    font-style: 14px;
-    line-height: 24px;
 }

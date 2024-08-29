@@ -2,11 +2,12 @@ import { Component, Input } from '@angular/core';
 // import { Profile } from '../../../data/interfaces/profile.interface';
 import { CommonModule } from '@angular/common';
 import { Profile } from '../../data/interfaces/profile.interface';
+import { ImgUrlPipe } from "../../helpers/pipes/img-url.pipe";
 
 @Component({
   selector: 'app-profile-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ImgUrlPipe],
   templateUrl: './profile-card.component.html',
   styleUrl: './profile-card.component.scss'
 })

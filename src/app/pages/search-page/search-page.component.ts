@@ -13,14 +13,16 @@ import { ProfileCardComponent } from '../../common-ui/profile-card/profile-card.
   styleUrl: './search-page.component.scss'
 })
 export class SearchPageComponent {
-  title = 'angular-test';
+
   profileService = inject(ProfileService)
   profiles: Profile[] = []
+
   constructor() {
-    this.profileService.getTestApp().subscribe((val: Profile[]) => {
+    this.profileService.getTestAccounts().subscribe((val: Profile[]) => {
       this.profiles = val
     })
   }
+
   trackById(index: number, profile: Profile): number {
     return profile.id;
   }
