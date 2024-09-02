@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../auth/auth.service';
 import { delay, from, map, skip, take, tap } from 'rxjs';
@@ -15,11 +15,14 @@ export class LoginPageComponent {
   authService = inject(AuthService)
   router = inject(Router)
 
+  isPasswordVisisble = signal<boolean>(false)
+
   form = new FormGroup({
     username: new FormControl<string | null>(null, Validators.required),
     password: new FormControl<string | null>(null, Validators.required)
   })
 
+  // ====== Пример работы с RxJS и метод Pipe()
   // constructor() {
   //   from([1, 2, 3, 4, 5, 6, 7, 8, 9])
   //     .pipe(
@@ -35,10 +38,10 @@ export class LoginPageComponent {
   onSubmit(event: Event) {
 
     if (this.form.valid) {
-      console.log('Form is valid');
+      // console.log('Form is valid');
       //@ts-ignore
       this.authService.login(this.form.value).subscribe(response => {
-        console.log('Response:', response);
+        // console.log('Response:', response);
         this.router.navigate([''])
       });
     }

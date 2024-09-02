@@ -1,1 +1,16 @@
-<p>sidebar works!</p>
+<img src="/assets/svg/Logo-Tik-Talk.svg" alt="" class="ml16 mb20">
+
+<nav>
+    <ul class="main-menu-list">
+
+        <li *ngFor="let menuItem of menuItems">
+            <a class="menu-item" [routerLink]="[menuItem.link]">
+                <svg [icon]="menuItem.icon"></svg>
+                <!-- <img src="/assets/svg/home.svg" alt=""> -->
+                <span>{{menuItem.label}}</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<p class="medium-text mb20">Подпищики</p>
